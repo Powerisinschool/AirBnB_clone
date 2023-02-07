@@ -33,5 +33,3 @@ class FileStorage:
                         self.__objects[k] = classes[v['__class__']](**v)
                     except Exception as e:
                         print(e)
-                    # if v['__class__'] == 'BaseModel':
-                    #     self.__objects[k] = BaseModel(**v)
