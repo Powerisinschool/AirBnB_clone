@@ -39,8 +39,8 @@ class HBNBCommand(cmd.Cmd):
                 instances.append(str(v))
         else:
             for k, v in storage.all().items():
-                    if isinstance(v, classes[caller]):
-                        instances.append(str(v))
+                if isinstance(v, classes[caller]):
+                    instances.append(str(v))
         return instances
 
     def do_quit(self, args):
@@ -101,7 +101,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, args: str):
-        """Prints string repr of all instances based or not on the class name"""
+        """Print string repr of all instances based or not on the class name"""
         args = args.strip()
         if args not in classes and args != "":
             print("** class doesn't exist **")
