@@ -2,6 +2,7 @@
 
 import cmd
 import sys
+from typing import List
 
 from models.base_model import BaseModel
 from models import storage
@@ -14,7 +15,7 @@ class HBNBCommand(cmd.Cmd):
         'Quit the console'
         sys.exit(code)
 
-    def parse(self, s: str) -> list[str]:
+    def parse(self, s: str) -> List[str]:
         result = [""]
         pause = False
         s = s.strip()
