@@ -4,7 +4,6 @@ import cmd
 import sys
 from typing import List
 
-from models.base_model import BaseModel
 from models import storage
 from models.classes import classes
 
@@ -12,7 +11,8 @@ from models.classes import classes
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
-    def quit(self, code: int):
+    @staticmethod
+    def quit(code: int):
         'Quit the console'
         sys.exit(code)
 
@@ -29,6 +29,18 @@ class HBNBCommand(cmd.Cmd):
                 continue
             result[-1] += char
         return result
+
+    @staticmethod
+    def fetch_instances(caller: str = "") -> List[any]:
+        instances = []
+        if caller == "":
+            for k, v in storage.all().items():
+                instances.append(str(v))
+        else:
+            for k, v in storage.all().items():
+                    if isinstance(v, classes[caller]):
+                        instances.append(str(v))
+        return instances
 
     def do_quit(self, args):
         """Exit the program"""
@@ -87,25 +99,17 @@ class HBNBCommand(cmd.Cmd):
         except Exception as _:
             print("** no instance found **")
 
-    def do_all(self, args):
-        'Prints string repr of all instances based or not on the class name'
-        instances = []
-        if args == "":
-            for k, v in storage.all().items():
-                instances.append(str(v))
-        elif args not in classes:
+    def do_all(self, args: str):
+        """Prints string repr of all instances based or not on the class name"""
+        args = args.strip()
+        if args not in classes and args != "":
             print("** class doesn't exist **")
             return
-        else:
-            for k, v in storage.all().items():
-                if isinstance(v, classes[args]):
-                    instances.append(str(v))
-        print(instances)
+        print(f"[{', '.join(self.fetch_instances(args))}]")
 
     def do_update(self, args):
         'Updates an instance by adding or updating attribute'
         args = self.parse(args)
-        # args = args.split(" ")
         if args[0] == '':
             print("** class name missing **")
             return
@@ -131,6 +135,49 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
         except Exception as e:
             print(e)
+
+    def handle_args(self, args, caller: str):
+        if args == ".all()":
+            self.do_all(caller)
+        if args == ".count()":
+            print(len(self.fetch_instances(caller)))
+        if args[:6] == ".show(" and args[-1] == ")":
+            id = args[6:-1]
+            self.do_show(f"{caller} {id}")
+        if args[:9] == ".destroy(" and args[-1] == ")":
+            id = args[9:-1]
+            self.do_destroy(f"{caller} {id}")
+        if args[:8] == ".update(" and args[-1] == ")":
+            fparse = " ".join([caller, *args[8:-1].split(", ")])
+            self.do_update(fparse)
+
+    def do_BaseModel(self, args):
+        """"""
+        self.handle_args(args, "BaseModel")
+
+    def do_User(self, args):
+        """"""
+        self.handle_args(args, "User")
+
+    def do_State(self, args):
+        """"""
+        self.handle_args(args, "State")
+
+    def do_City(self, args):
+        """"""
+        self.handle_args(args, "City")
+
+    def do_Amenity(self, args):
+        """"""
+        self.handle_args(args, "Amenity")
+
+    def do_Place(self, args):
+        """"""
+        self.handle_args(args, "Place")
+
+    def do_Review(self, args):
+        """"""
+        self.handle_args(args, "Review")
 
 
 if __name__ == '__main__':
