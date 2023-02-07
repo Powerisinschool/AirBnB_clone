@@ -4,6 +4,7 @@ import json
 import os
 from typing import Dict
 
+
 class FileStorage:
     __file_path = "file.json"
     __objects: Dict[str, any] = {}

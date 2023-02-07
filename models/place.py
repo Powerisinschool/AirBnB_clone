@@ -2,6 +2,7 @@
 
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     def __init__(self, *args, **kwargs):
         self.city_id = ""

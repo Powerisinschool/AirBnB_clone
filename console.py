@@ -8,6 +8,7 @@ from models.base_model import BaseModel
 from models import storage
 from models.classes import classes
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
@@ -38,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
         self.quit(0)
 
     def do_create(self, args):
-        'Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. Ex: `$ create BaseModel`'
+        'Creates a new instance and prints the id. Ex: `$ create BaseModel`'
         if len(args) < 0:
             print("** class name missing **")
             return
@@ -50,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
         print(new.id)
 
     def do_show(self, args):
-        'Prints the string representation of an instance based on the class name and id. Ex: `$ show BaseModel 1234-1234-1234`'
+        'Prints the repr of an instance e.g `$ show BaseModel 1234-1234-1234`'
         args = self.parse(args)
         if args[0] == '':
             print("** class name missing **")
@@ -63,11 +64,11 @@ class HBNBCommand(cmd.Cmd):
             return
         try:
             print(storage.all()[f"{args[0]}.{args[1]}"])
-        except:
+        except Exception as _:
             print("** no instance found **")
 
     def do_destroy(self, args):
-        'Deletes an instance based on the class name and id (saves the change into the JSON file)'
+        'Deletes an instance based on the class name and id'
         args = self.parse(args)
         if args[0] == '':
             print("** class name missing **")
@@ -82,11 +83,11 @@ class HBNBCommand(cmd.Cmd):
         try:
             storage.all().pop(f"{args[0]}.{args[1]}")
             storage.save()
-        except:
+        except Exception as _:
             print("** no instance found **")
 
     def do_all(self, args):
-        'Prints all string representation of all instances based or not on the class name'
+        'Prints string repr of all instances based or not on the class name'
         instances = []
         if args == "":
             for k, v in storage.all().items():
@@ -96,11 +97,12 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             for k, v in storage.all().items():
-                if isinstance(v, classes[args]): instances.append(str(v))
+                if isinstance(v, classes[args]):
+                    instances.append(str(v))
         print(instances)
 
     def do_update(self, args):
-        'Updates an instance based on the class name and id by adding or updating attribute (saves the change into the JSON file)'
+        'Updates an instance by adding or updating attribute'
         args = self.parse(args)
         # args = args.split(" ")
         if args[0] == '':
