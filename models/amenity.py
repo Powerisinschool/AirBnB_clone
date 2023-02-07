@@ -2,8 +2,7 @@
 
 from models.base_model import BaseModel
 
-class City(BaseModel):
-    state_id = ""
+class Amenity(BaseModel):
     name = ""
 
     def __init__(self, *args, **kwargs):
