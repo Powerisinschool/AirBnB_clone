@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 test_*.py
+!tests/*.py
 file.json

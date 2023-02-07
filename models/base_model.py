@@ -33,7 +33,7 @@ class BaseModel:
         storage.save()
 
     def to_dict(self):
-        instance_dict = self.__dict__
+        instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
         for k, v in instance_dict.items():
             if isinstance(v, datetime):
