@@ -12,6 +12,9 @@ from models.classes import classes
 
 
 class HBNBCommand(cmd.Cmd):
+    """
+    The entry point for the command interpreter
+    """
     prompt = "(hbnb) "
 
     @staticmethod
