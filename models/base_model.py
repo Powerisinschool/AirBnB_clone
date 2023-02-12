@@ -29,8 +29,8 @@ class BaseModel:
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
-        self.__update()
         storage.save()
+        self.__update()
 
     def to_dict(self):
         instance_dict = self.__dict__.copy()
