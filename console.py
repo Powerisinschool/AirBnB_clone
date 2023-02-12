@@ -2,6 +2,7 @@
 """
 AirBnB console
 """
+import shlex
 import cmd
 import json
 import sys
@@ -23,18 +24,19 @@ class HBNBCommand(cmd.Cmd):
         sys.exit(code)
 
     def parse(self, s: str) -> List[str]:
-        result = [""]
-        pause = False
-        s = s.strip()
-        for char in s:
-            if char == '"' or char == "'":
-                pause = not pause
-                continue
-            if char == " " and not pause:
-                result.append("")
-                continue
-            result[-1] += char
-        return result
+        # result = [""]
+        # pause = False
+        # s = s.strip()
+        # for char in s:
+        #     if char == '"' or char == "'":
+        #         pause = not pause
+        #         continue
+        #     if char == " " and not pause:
+        #         result.append("")
+        #         continue
+        #     result[-1] += char
+        # return result
+        return shlex.split(s)
 
     @staticmethod
     def fetch_instances(caller: str = "") -> List[any]:
@@ -72,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, args):
         'Prints the repr of an instance e.g `$ show BaseModel 1234-1234-1234`'
         args = self.parse(args)
-        if args[0] == '':
+        if args == []:
             print("** class name missing **")
             return
         if args[0] not in classes:
@@ -89,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, args):
         'Deletes an instance based on the class name and id'
         args = self.parse(args)
-        if args[0] == '':
+        if args == []:
             print("** class name missing **")
             return
         if args[0] not in classes:
@@ -116,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, args):
         """Updates an instance by adding or updating attribute"""
         args = self.parse(args)
-        if args[0] == '':
+        if args == []:
             print("** class name missing **")
             return
         if args[0] not in classes:
