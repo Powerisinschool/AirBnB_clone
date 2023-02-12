@@ -187,6 +187,10 @@ class HBNBCommand(cmd.Cmd):
     def do_Review(self, args):
         """Review Model"""
         self.handle_args(args, "Review")
+        
+    def emptyline(self):
+        """Empty line should do nothing"""
+        pass
 
 
 if __name__ == '__main__':
