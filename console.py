@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
         print(f"[{', '.join(self.fetch_instances(args))}]")
 
     def do_update(self, args):
-        'Updates an instance by adding or updating attribute'
+        """Updates an instance by adding or updating attribute"""
         args = self.parse(args)
         if args[0] == '':
             print("** class name missing **")
@@ -161,31 +161,31 @@ class HBNBCommand(cmd.Cmd):
             self.do_update(fparse)
 
     def do_BaseModel(self, args):
-        """"""
+        """Base Model"""
         self.handle_args(args, "BaseModel")
 
     def do_User(self, args):
-        """"""
+        """User Model"""
         self.handle_args(args, "User")
 
     def do_State(self, args):
-        """"""
+        """State Model"""
         self.handle_args(args, "State")
 
     def do_City(self, args):
-        """"""
+        """City Model"""
         self.handle_args(args, "City")
 
     def do_Amenity(self, args):
-        """"""
+        """Amenity Model"""
         self.handle_args(args, "Amenity")
 
     def do_Place(self, args):
-        """"""
+        """Place Model"""
         self.handle_args(args, "Place")
 
     def do_Review(self, args):
-        """"""
+        """Review Model"""
         self.handle_args(args, "Review")
 
 
