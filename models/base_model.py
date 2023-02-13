@@ -24,13 +24,14 @@ class BaseModel:
 
     def __update(self):
         self.updated_at = datetime.now()
+        # self.save()
 
     def __str__(self):
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
-        storage.save()
         self.__update()
+        storage.save()
 
     def to_dict(self):
         instance_dict = self.__dict__.copy()

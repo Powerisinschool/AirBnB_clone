@@ -25,7 +25,6 @@ class FileStorage:
     def reload(self):
         if os.path.exists(self.__file_path):
             with open(self.__file_path, "r") as fp:
-                # from models.base_model import BaseModel
                 self.__objects: dict[str, any] = json.loads(fp.read())
                 for k, v in self.__objects.items():
                     try:
