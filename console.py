@@ -161,7 +161,11 @@ class HBNBCommand(cmd.Cmd):
                 return
             fargs = args[8:-1]
             if fargs[0] == "{" and len(fargs) > 2:
-                attr_dict = json.loads(fargs)
+                try:
+                    attr_dict = json.loads(fargs)
+                except Exception as e:
+                    print(e)
+                    return
                 print(attr_dict)
                 for k, v in attr_dict.items():
                     setattr(storage.all()[f"{caller}.{fargs[0]}"], k, v)
