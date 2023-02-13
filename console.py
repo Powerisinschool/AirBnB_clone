@@ -156,15 +156,18 @@ class HBNBCommand(cmd.Cmd):
             id = args[9:-1]
             self.do_destroy(f"{caller} {id}")
         if args[:8] == ".update(" and args[-1] == ")":
-            fargs = args[8:-1].split(", ")
-            if fargs[1][0] == "{" and len(fargs) > 2:
-                attr_dict = json.loads(", ".join(fargs[1:]))
+            if len(args) < 10:
+                self.do_update(caller)
+                return
+            fargs = args[8:-1]
+            if fargs[0] == "{" and len(fargs) > 2:
+                attr_dict = json.loads(fargs)
                 print(attr_dict)
                 for k, v in attr_dict.items():
                     setattr(storage.all()[f"{caller}.{fargs[0]}"], k, v)
                     # self.do_update(f"{caller} {fargs[0]} {k} {v}")
                 return
-            fparse = " ".join([caller, *fargs])
+            fparse = " ".join([caller, *(fargs.split(", "))])
             self.do_update(fparse)
 
     def do_BaseModel(self, args):
