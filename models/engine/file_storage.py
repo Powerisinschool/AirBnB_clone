@@ -17,8 +17,6 @@ class FileStorage:
 
     def save(self):
         obj = self.__objects.copy()
-        if obj == {}:
-            return
         for k, v in obj.items():
             obj[k] = v.to_dict()
         with open(self.__file_path, "w") as fp:
