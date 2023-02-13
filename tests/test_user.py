@@ -14,7 +14,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(user.password, '')
         self.assertEqual(user.first_name, '')
         self.assertEqual(user.last_name, '')
-        
         self.assertEqual(User.email, '')
         self.assertEqual(User.password, '')
         self.assertEqual(User.first_name, '')
