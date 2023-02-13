@@ -14,7 +14,7 @@ class Place(BaseModel):
     price_by_night: int = 0
     latitude: float = 0.
     longitude: float = 0.
-    
+
     def __init__(self, *args, **kwargs):
         self.city_id = ""
         self.user_id = ""
