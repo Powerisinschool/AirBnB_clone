@@ -1,4 +1,5 @@
 .filters {
+    position: relative;
     display: flex;
     background-color: #FFFFFF;
     height: 70px;
@@ -31,8 +32,7 @@
     border-right: 1px solid #DDDDDD;
 }
 
-.locations,
-.amenities {
+.filter {
     display: inline-block;
     width: 25%;
     padding-top: 17px;
@@ -62,4 +62,22 @@
     height: 50%;
     margin: 0;
     padding: 0 0 0 30px;
+}
+
+.popover {
+    display: none;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin: 0;
+    margin-top: 9px;
+    padding: 0 15px;
+}
+
+.filter:hover .popover {
+    display: block;
+}
+
+.popover li {
+    list-style: none;
 }
