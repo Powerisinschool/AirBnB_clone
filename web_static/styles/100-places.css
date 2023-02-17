@@ -105,3 +105,62 @@ article .information > div {
     margin: 10px 0;
 }
 
+article .amenities,
+article .reviews {
+    margin-top: 40px;
+}
+
+.amenities > h2.title,
+.reviews > h2.title {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
+    padding-bottom: 4px;
+}
+
+article .amenities > ul,
+article .reviews > ul {
+    display: grid;
+    grid-row-gap: 5px;
+    list-style: none;
+    padding: 0;
+}
+
+article .amenities > ul > li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon {
+    display: inline-block;
+    height: 20px;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+}
+
+.tv_icon {
+    background: url("../images/icon_tv.png");
+    background-size: contain;
+}
+
+.wifi_icon {
+    background: url("../images/icon_wifi.png");
+    background-size: contain;
+}
+
+.pet_friendly_icon {
+    background: url("../images/icon_pets.png");
+    background-size: contain;
+}
+
+/* Reviews */
+
+article .reviews li > h3.description {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+article .reviews li > p.text {
+    font-size: 14px;
+    margin: 0;
+}
