@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirBnB Clone</title>
+    <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/3-header.css">
+    <link rel="stylesheet" href="styles/3-footer.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
+    <link rel="stylesheet" href="styles/101-places.css">
+    <link rel="icon" href="images/icon.png" type="image/png" />
+</head>
+
+<body>
+    <header>
+        <span class="logo"></span>
+    </header>
+    <div class="container">
+        <section class="filters">
+            <div class="filter locations">
+                <h3>States</h3>
+                <h4>California, Arizona...</h4>
+                <ul class="popover">
+                    <li>
+                        <h2>Arizona:</h2>
+                        <ul>
+                            <li>Page</li>
+                            <li>Page2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>California:</h2>
+                        <ul>
+                            <li>San Francisco</li>
+                            <li>Los Altos</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter amenities">
+                <h3>Amenities</h3>
+                <h4>Internet, Kitchen...</h4>
+                <ul class="popover">
+                    <li>Internet</li>
+                    <li>TV</li>
+                    <li>Kitchen</li>
+                    <li>Iron</li>
+                </ul>
+            </div>
+            <button type="submit">Search</button>
+        </section>
+        <section class="places">
+            <h1>Places</h1>
+            <div class="articles">
+                <article>
+                    <div class="place">
+                        <h2>My home</h2>
+                        <div class="price_by_night">$80</div>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <span class="guests_icon"></span>
+                            <span>2 guests</span>
+                        </div>
+                        <div class="number_rooms">
+                            <span class="bedroom_icon"></span>
+                            <span>1 Bedroom</span>
+                        </div>
+                        <div class="number_bathrooms">
+                            <span class="bathroom_icon"></span>
+                            <span>1 Bathroom</span>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <b>Owner:</b>&nbsp;John Lennon
+                    </div>
+                    <div class="description">
+                        This is a lovely 1 bedroom and 1 bathroom apartment that can
+                        accomodate 2 people. It locates at the center of Shangai and next
+                        to the subway line. 1 stop to People Square, 2 stops to Bund, 3
+                        stops to Jingan temple.
+                    </div>
+                    <div class="amenities">
+                        <h2 class="title">Amenities</h2>
+                        <ul class="list_of_amenities">
+                            <li>
+                                <span class="icon tv_icon"></span>
+                                TV
+                            </li>
+                            <li>
+                                <span class="icon wifi_icon"></span>
+                                WiFi
+                            </li>
+                            <li>
+                                <span class="icon pet_friendly_icon"></span>
+                                Pets Friendly
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h2 class="title">Reviews</h2>
+                        <ul class="list_of_reviews">
+                            <li>
+                                <h3 class="description">
+                                    From Bob Dylan the 27th January 2017
+                                </h3>
+                                <p class="text">
+                                    Runshi is an epic host.
+                                    Nothing more I can say.
+                                    5 star!
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="description">
+                                    From Connor the 4th January 2017
+                                </h3>
+                                <p class="text">
+                                    Highly recommended!
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <div class="place">
+                        <h2>Tiny house</h2>
+                        <div class="price_by_night">$65</div>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <span class="guests_icon"></span>
+                            <span>4 guests</span>
+                        </div>
+                        <div class="number_rooms">
+                            <span class="bedroom_icon"></span>
+                            <span>2 Bedrooms</span>
+                        </div>
+                        <div class="number_bathrooms">
+                            <span class="bathroom_icon"></span>
+                            <span>1 Bathroom</span>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <b>Owner:</b>&nbsp;Adrienne
+                    </div>
+                    <div class="description">
+                        This is a lovely 1 bedroom and 1 bathroom apartment that can
+                        accomodate 2 people. It locates at the center of Shangai and next
+                        to the subway line. 1 stop to People Square, 2 stops to Bund, 3
+                        stops to Jingan temple. This is a lovely 1 bedroom and 1 bathroom apartment that can
+                        accomodate 2 people. It locates at the center of Shangai and next
+                        to the subway line. 1 stop to People Square, 2 stops to Bund, 3
+                        stops to Jingan temple.
+                    </div>
+                    <div class="amenities">
+                        <h2 class="title">Amenities</h2>
+                        <ul class="list_of_amenities">
+                            <li>
+                                <span class="icon pet_friendly_icon"></span>
+                                Pets Friendly
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h2 class="title">Reviews</h2>
+                        <ul class="list_of_reviews">
+                            <li>
+                                <h3 class="description">
+                                    From Max the 27th January 2017
+                                </h3>
+                                <p class="text">
+                                    Fantastic place.
+                                    It was clean, Adrienne was great (even though we did not meet in person)
+                                    and everything went super smooth.
+                                    Location is also great if you like running
+                                    and something a bit more quiet.
+                                    I would suggest a car or take into consideration that you might have
+                                    to Uber into the city from your location.
+                                    Overall, would recommend the place anytime.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <div class="place">
+                        <h2>A suite</h2>
+                        <div class="price_by_night">$190</div>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">
+                            <span class="guests_icon"></span>
+                            <span>4 guests</span>
+                        </div>
+                        <div class="number_rooms">
+                            <span class="bedroom_icon"></span>
+                            <span>2 Bedrooms</span>
+                        </div>
+                        <div class="number_bathrooms">
+                            <span class="bathroom_icon"></span>
+                            <span>1 Bathroom</span>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <b>Owner:</b>&nbsp;Bill Zuckerberg
+                    </div>
+                    <div class="description">
+                        Newly renovated spacious 2 bedrooms 2 baths in cozy Gastown style unit
+                        with the views of North Shore mountains.
+                        Woodward's landmark building situated at the historic
+                        heart of Vancouver.
+                    </div>
+                    <div class="amenities">
+                        <h2 class="title">Amenities</h2>
+                        <ul class="list_of_amenities">
+                            <li>
+                                <span class="icon pet_friendly_icon"></span>
+                                Pets Friendly
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reviews">
+                        <h2 class="title">Reviews</h2>
+                        <ul class="list_of_reviews">
+                            <li>
+                                <h3 class="description">
+                                    From John the 28th January 2017
+                                </h3>
+                                <p class="text">
+                                    Fantastic place.
+                                    It was clean, Bill was great and everything went super smooth.
+                                    Location is also great if you like running
+                                    and something a bit more quiet.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <footer>
+        Best School
+    </footer>
+</body>
+
+</html>
