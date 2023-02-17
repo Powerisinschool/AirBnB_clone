@@ -4,7 +4,7 @@ header {
     align-items: center;
     background-color: #FFFFFF;
     height: 70px;
-    width: 100%;
+    width: calc(100% - 20px);
     border-bottom: 1px solid #CCCCCC;
     padding-left: 20px;
 }

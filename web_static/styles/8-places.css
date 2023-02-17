@@ -49,8 +49,12 @@
     align-items: center;
     right: 0;
     width: fit-content;
+    padding: 4px;
     place-self: end;
+    aspect-ratio: 1/1;
 }
+
+/* Information section */
 
 article .information {
     height: 80px;
@@ -58,12 +62,46 @@ article .information {
     border-bottom: 1px solid #DDDDDD;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
 }
 
 article .information > div {
     width: 100px;
 }
 
+.max_guest,
+.number_rooms,
+.number_bathrooms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .guests_icon {
+    display: block;
+    height: 50px;
+    aspect-ratio: 1/1;
     background: url("../images/icon_group.png");
 }
+
+.bedroom_icon {
+    display: block;
+    height: 50px;
+    aspect-ratio: 1/1;
+    background: url("../images/icon_bed.png");
+}
+
+.bathroom_icon {
+    display: block;
+    height: 50px;
+    aspect-ratio: 1/1;
+    background: url("../images/icon_bath.png");
+}
+
+/* User section */
+.user {
+    margin: 10px 0;
+}
+
